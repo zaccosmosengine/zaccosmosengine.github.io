@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Z.C.E. / ZAC.COSMOS.ENGINE — Studio Portfolio</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Playfair Display (Serif Editorial), Inter (Body Sans), Space Mono (Technical Labels) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'zce-black': '#0a0b0d',
+                        'zce-card': '#121418',
+                        'zce-cream': '#F4F3EF',
+                        'zce-muted': '#94a3b8',
+                        'zce-dark-muted': '#475569',
+                        'zce-accent': '#0066FF',
+                        'zce-border': 'rgba(255, 255, 255, 0.08)',
+                        'zce-border-hover': 'rgba(0, 102, 255, 0.4)',
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Space Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #0a0b0d;
+            color: #F4F3EF;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .hairline-border {
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .hairline-border-b {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .hairline-border-t {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .hairline-border-r {
+            border-right: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        /* Editorial Custom Grain Texture */
+        .bg-grain {
+            background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+
+        /* Micro-interactions */
+        .hover-lift {
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-4px);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 5px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0b0d;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 2px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0066FF;
+        }
+
+        /* Modal Overlay Backdrop Blur */
+        .drawer-overlay {
+            background: rgba(10, 11, 13, 0.88);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col antialiased bg-grain selection:bg-zce-accent selection:text-white">
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="sticky top-0 z-40 w-full bg-zce-black/90 backdrop-blur-md hairline-border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Studio Brand Logo -->
+            <a href="#" class="group flex items-center space-x-3">
+                <div class="w-8 h-8 rounded-sm bg-zce-cream text-zce-black flex items-center justify-center font-mono font-bold text-xs tracking-wider transition-transform group-hover:bg-zce-accent group-hover:text-white">
+                    ZCE
+                </div>
+                <div>
+                    <span class="font-mono font-bold text-sm tracking-widest text-zce-cream block leading-none">Z.C.E.</span>
+                    <span class="text-[9px] tracking-widest text-zce-muted uppercase font-mono">ZAC.COSMOS.ENGINE</span>
+                </div>
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex items-center space-x-8 text-xs font-mono uppercase tracking-widest text-zce-muted">
+                <a href="#projects" class="hover:text-zce-cream transition-colors">Projects [05]</a>
+                <a href="#about" class="hover:text-zce-cream transition-colors">Studio</a>
+                <a href="#approach" class="hover:text-zce-cream transition-colors">Approach</a>
+                <a href="#contact" class="hover:text-zce-cream transition-colors">Contact</a>
+            </nav>
+
+            <!-- Availability Status Badge -->
+            <div class="flex items-center space-x-2 px-3 py-1.5 rounded-full hairline-border bg-zce-card">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span class="text-[10px] font-mono uppercase tracking-widest text-zce-muted">Studio Available</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        
+        <!-- HERO SECTION -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-20 md:pt-28 md:pb-32 hairline-border-b">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
+                
+                <div class="lg:col-span-8">
+                    <div class="inline-flex items-center space-x-2 text-xs font-mono text-zce-accent tracking-widest uppercase mb-6">
+                        <span>[ EDITORIAL DIGITAL PRACTICE ]</span>
+                    </div>
+                    <h1 class="text-4xl sm:text-6xl lg:text-7xl font-serif font-normal tracking-tight leading-[1.05] text-zce-cream mb-8">
+                        WE BUILD WEBSITES THAT <span class="italic font-normal text-zce-muted underline decoration-zce-accent decoration-1 underline-offset-8">MATTER.</span>
+                    </h1>
+                    <p class="text-base sm:text-lg text-zce-muted font-sans font-light leading-relaxed max-w-2xl">
+                        Z.C.E. is an independent digital studio focused on high-contrast, editorial web design and interactive architecture. We create crisp visual frames around unique digital products.
+                    </p>
+                </div>
+
+                <!-- Hero Meta Data Frame -->
+                <div class="lg:col-span-4 flex flex-col justify-between space-y-6 lg:border-l hairline-border lg:pl-8 py-2">
+                    <div class="space-y-4">
+                        <div class="text-xs font-mono uppercase text-zce-muted tracking-widest flex justify-between">
+                            <span>Aesthetic System</span>
+                            <span class="text-zce-cream">70 / 20 / 10</span>
+                        </div>
+                        
+                        <div class="space-y-2 text-xs font-mono text-zce-muted">
+                            <div class="flex items-center justify-between py-1 border-b border-white/5">
+                                <span>70% Editorial Precision</span>
+                                <span class="text-zce-cream">Typography</span>
+                            </div>
+                            <div class="flex items-center justify-between py-1 border-b border-white/5">
+                                <span>20% Digital Structure</span>
+                                <span class="text-zce-cream">Grid System</span>
+                            </div>
+                            <div class="flex items-center justify-between py-1">
+                                <span>10% Experimental Motion</span>
+                                <span class="text-zce-accent font-bold">Interactions</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 hairline-border-t flex items-center justify-between">
+                        <span class="text-xs font-mono uppercase text-zce-muted">Live Deployments</span>
+                        <span class="text-xs font-mono font-bold text-zce-cream flex items-center gap-1.5">
+                            <span class="w-2 h-2 rounded-full bg-zce-accent"></span> 5 / 5 Active
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- PROJECTS SHOWCASE SECTION -->
+        <section id="projects" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 hairline-border-b">
+            
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-20 pb-6 hairline-border-b">
+                <div>
+                    <span class="text-xs font-mono uppercase tracking-widest text-zce-accent">[ SELECTED WORKS ]</span>
+                    <h2 class="text-3xl sm:text-5xl font-serif text-zce-cream mt-2 tracking-tight">FEATURED PROJECTS</h2>
+                </div>
+                <p class="text-xs font-mono text-zce-muted mt-4 md:mt-0 max-w-sm">
+                  Click "Quick Preview" to test drive any deployed application live inside this portfolio viewport.
+                </p>
+            </div>
+
+            <div class="space-y-28">
+
+                <!-- PROJECT 01: NOIR STUDIO -->
+                <article class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center group">
+                    <div class="lg:col-span-7 order-2 lg:order-1">
+                        <div class="relative rounded-sm overflow-hidden hairline-border bg-zce-card p-3 hover-lift group-hover:border-zce-border-hover">
+                            <div class="relative aspect-[16/10] overflow-hidden bg-zce-black">
+                                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80" alt="NOIR STUDIO Project Screenshot" class="w-full h-full object-cover grayscale contrast-125 transition-all duration-700 group-hover:scale-105 group-hover:grayscale-0">
+                                <div class="absolute inset-0 bg-gradient-to-t from-zce-black via-transparent to-transparent opacity-80"></div>
+                                <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between">
+                                    <span class="px-2.5 py-1 text-[10px] font-mono uppercase bg-zce-black/80 text-zce-cream hairline-border backdrop-blur-sm">Editorial & Brand</span>
+                                    <button onclick="openPreview('https://zaccosmosengine.github.io/Project-1/', 'NOIR STUDIO // Project 01')" class="px-3 py-1.5 rounded-sm bg-zce-accent text-white font-mono text-[11px] uppercase tracking-wider flex items-center gap-1.5 shadow-lg hover:bg-blue-700 transition-colors">
+                                        <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i> Quick Preview
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-5 order-1 lg:order-2 space-y-6">
+                        <div class="text-xs font-mono text-zce-accent font-bold tracking-widest uppercase">01 // 05</div>
+                        <h3 class="text-3xl sm:text-4xl font-serif text-zce-cream tracking-tight">NOIR STUDIO</h3>
+                        <div class="text-xs font-mono text-zce-muted uppercase tracking-wider">Category: Editorial & Brand Platform</div>
+                        <p class="text-sm text-zce-muted leading-relaxed font-light">
+                            High-contrast editorial layout prioritizing core web layout principles, dark aesthetic tones, structural symmetry, and graphic rhythm.
+                        </p>
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span class="px-2.5 py-1 text-[10px] font-mono uppercase hairline-border bg-zce-card text-zce-cream">HTML5</span>
+                            <span class="px-2.5 py-1 text-[10px] font-mono uppercase hairline-border bg-zce-card text-zce-cream">Editorial Layout</span>
+                            <span class="px-2.5 py-1 text-[10px] font-mono uppercase hairline-border bg-zce-card text-zce-cream">CSS Grid</span>
+                        </div>
+                        <div class="flex items-center space-x-6 pt-4 hairline-border-t">
+                            <a href="https://zaccosmosengine.github.io/Project-1/" target="_blank" class="text-zce-cream font-mono text-xs uppercase tracking-widest inline-flex items-center hover:text-zce-accent transition-colors">
+                                View Live Site <i data-lucide="arrow-up-right" class="w-4 h-4 ml-1"></i>
+                            </a>
+                            <button onclick="openPreview('https://zaccosmosengine.github.io/Project-1/', 'NOIR STUDIO // Project 01')" class="text-xs font-mono text-zce-muted hover:text-zce-cream transition-colors">
+                                Embedded Preview
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- PROJECT 02: VELOCITY DARK -->
+                <article class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center group">
+                    <div class="lg:col-span-5 space-y-6">
+                        <div class="text-xs font-mono text-zce-accent font-bold tracking-widest uppercase">02 // 05</div>
+                        <h3 class="text-3xl sm:text-4xl font-serif text-zce-cream tracking-tight">VELOCITY DARK</h3>
+                        <div class="text-xs font-mono text-zce-muted uppercase tracking-wider">Category: Cinematic Agency Experience</div>
+                        <p class="text-sm text-zce-muted leading-relaxed font-light">
+                            Sleek, high-intensity dark-mode showcase engineered for bold digital agencies. Features high typography contrast and high-velocity visual components.
+                        </p>
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span class="px-2.5 py-1 text-[10px] font-mono uppercase hairline-border bg-zce-card text-zce-cream">Cinematic UX</span>
+                            <span class="px-2.5 py-1 text-[10px] font-mono uppercase hairline-border bg-zce-card text-zce-cream">Agency Landing</span>
+                            <span class="px-2.5 py-1 text-[10px] font-mono uppercase hairline-border bg-zce-card text-zce-cream">Dark System</span>
+                        </div>
+                        <div class="flex items-center space-x-6 pt-4 hairline-border-t">
+                            <a href="https://zaccosmosengine.github.io/Project-2-VelocityDark-/" target="_blank" class="text-zce-cream font-mono text-xs uppercase tracking-widest inline-flex items-center hover:text-zce-accent transition-colors">
+                                View Live Site <i data-lucide="arrow-up-right" class="w-4 h-4 ml-1"></i>
+                            </a>
+                            <button onclick="openPreview('https://zaccosmosengine.github.io/Project-2-VelocityDark-/', 'VELOCITY DARK // Project 02')" class="text-xs font-mono text-zce-muted hover:text-zce-cream transition-colors">
+                                Embedded Preview
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-7">
+                        <div class="relative rounded-sm overflow-hidden hairline-border bg-zce-card p-3 hover-lift group-hover:border-zce-border-hover">
+                            <div class="relative aspect-[16/10] overflow-hidden bg-zce-black">
+                                <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1200&q=80" alt="Velocity Dark Project Screenshot" class="w-full h-full object-cover grayscale contrast-125 transition-all duration-700 group-hover:scale-105 group-hover:grayscale-0">
+                                <div class="absolute inset-0 bg-gradient-to-t from-zce-black via-transparent to-transparent opacity-80"></div>
+                                <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between">
+                                    <span class="px-2.5 py-1 text-[10px] font-mono uppercase bg-zce-black/80 text-zce-cream hairline-border backdrop-blur-sm">Cinematic Agency</span>
+                                    <button onclick="openPreview('https://zaccosmosengine.github.io/Project-2-VelocityDark-/', 'VELOCITY DARK // Project 02')" class="px-3 py-1.5 rounded-sm bg-zce-accent text-white font-mono text-[11px] uppercase tracking-wider flex items-center gap-1.5 shadow-lg hover:bg-blue-700 transition-colors">
+                                        <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i> Quick Preview
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- PROJECT 03: BREW & CO. -->
+                <article class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center group">
+                    <div class="lg:col-span-7 order-2 lg:order-1">
+                        <div class="relative rounded-sm overflow-hidden hairline-border bg-zce-card p-3 hover-lift group-hover:border-zce-border-hover">
+                            <div class="relative aspect-[16/10] overflow-hidden bg-zce-black">
+                                <img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=1200&q=80" alt="Brew & Co Project Screenshot" class="w-full h-full object-cover grayscale contrast-125 transition-all duration-700 group-hover:scale-105 group-hover:grayscale-0">
+                                <div class="absolute inset-0 bg-gradient-to-t from-zce-black via-transparent to-transparent opacity-80"></div>
+                                <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between">
+                                    <span class="px-2.5 py-1 text-[10px] font-mono uppercase bg-zce-black/80 text-zce-cream hairline-border backdrop-blur-sm">Warm Hospitality</span>
+                                    <button onclick="openPreview('https://zaccosmosengine.github.io/Project-3-Brew-Co/', 'BREW & CO. // Project 03')" class="px-3 py-1.5 rounded-sm bg-zce-accent text-white font-mono text-[11px] uppercase tracking-wider flex items-center gap-1.5 shadow-lg hover:bg-blue-700 transition-colors">
+                                        <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i> Quick Preview
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-5 order-1 lg:order-2 space-y-6">
+                        <div class="text-xs font-mono text-zce-accent font-bold tracking-widest uppercase">03 // 05</div>
+                        <h3 class="text-3xl sm:text-4xl font-serif text-zce-cream tracking-tight">BREW & CO.</h3>
+                        <div class="text-xs font-mono text-zce-muted uppercase tracking-wider">Category: Warm Hospitality & Commerce</div>
+                        <p class="text-sm text-zce-muted leading-relaxed font-light">
+                            Artisanal coffee landing experience built with organic warmth, rich menu architecture, and editorial layout systems.
+                        </p>
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span class="px-2.5 py-1 text-[10px] font-mono uppercase hairline-border bg-zce-card text-zce-cream">Hospitality Design</span>
+                            <span class="px-2.5 py-1 text-[10px] font-mono uppercase hairline-border bg-zce-card text-zce-cream">Warm Aesthetic</span>
+                            <span class="px-2.5 py-1 text-[10px] font-mono uppercase hairline-border bg-zce-card text-zce-cream">Menu System</span>
+                        </div>
+                        <div class="flex items-center space-x-6 pt-4 hairline-border-t">
+                            <a href="https://zaccosmosengine.github.io/Project-3-Brew-Co/" target="_blank" class="text-zce-cream font-mono text-xs uppercase tracking-widest inline-flex items-center hover:text-zce-accent transition-colors">
+                                View Live Site <i data-lucide="arrow-up-right" class="w-4 h-4 ml-1"></i>
+                            </a>
+                            <button onclick="openPreview('https://zaccosmosengine.github.io/Project-3-Brew-Co/', 'BREW & CO. // Project 03')" class="text-xs font-mono text-zce-muted hover:text-zce-cream transition-colors">
+                                Embedded Preview
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- PROJECT 04: PULSE -->
+                <article class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center group">
+                    <div class="lg:col-span-5 space-y-6">
+                        <div class="text-xs font-mono text-zce-accent font-bold tracking-widest uppercase">04 // 05</div>
+                        <h3 class="text-3xl sm:text-4xl font-serif text-zce-cream tracking-tight">PULSE</h3>
+                        <div class="text-xs font-mono text-zce-muted uppercase tracking-wider">Category: Futuristic Synth Platform</div>
+                        <p class="text-sm text-zce-muted leading-relaxed font-light">
+                            Dynamic sound & digital audio landing experience featuring synth interface modules and high-octane component hierarchies.
+                        </p>
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span class="px-2.5 py-1 text-[10px] font-mono uppercase hairline-border bg-zce-card text-zce-cream">Audio Platform</span>
+                            <span class="px-2.5 py-1 text-[10px] font-mono uppercase hairline-border bg-zce-card text-zce-cream">Synth Interface</span>
+                            <span class="px-2.5 py-1 text-[10px] font-mono uppercase hairline-border bg-zce-card text-zce-cream">Dynamic Layout</span>
+                        </div>
+                        <div class="flex items-center space-x-6 pt-4 hairline-border-t">
+                            <a href="https://zaccosmosengine.github.io/Project-4-Pulse/" target="_blank" class="text-zce-cream font-mono text-xs uppercase tracking-widest inline-flex items-center hover:text-zce-accent transition-colors">
+                                View Live Site <i data-lucide="arrow-up-right" class="w-4 h-4 ml-1"></i>
+                            </a>
+                            <button onclick="openPreview('https://zaccosmosengine.github.io/Project-4-Pulse/', 'PULSE // Project 04')" class="text-xs font-mono text-zce-muted hover:text-zce-cream transition-colors">
+                                Embedded Preview
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-7">
+                        <div class="relative rounded-sm overflow-hidden hairline-border bg-zce-card p-3 hover-lift group-hover:border-zce-border-hover">
+                            <div class="relative aspect-[16/10] overflow-hidden bg-zce-black">
+                                <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=1200&q=80" alt="Pulse Project Screenshot" class="w-full h-full object-cover grayscale contrast-125 transition-all duration-700 group-hover:scale-105 group-hover:grayscale-0">
+                                <div class="absolute inset-0 bg-gradient-to-t from-zce-black via-transparent to-transparent opacity-80"></div>
+                                <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between">
+                                    <span class="px-2.5 py-1 text-[10px] font-mono uppercase bg-zce-black/80 text-zce-cream hairline-border backdrop-blur-sm">Audio Web Platform</span>
+                                    <button onclick="openPreview('https://zaccosmosengine.github.io/Project-4-Pulse/', 'PULSE // Project 04')" class="px-3 py-1.5 rounded-sm bg-zce-accent text-white font-mono text-[11px] uppercase tracking-wider flex items-center gap-1.5 shadow-lg hover:bg-blue-700 transition-colors">
+                                        <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i> Quick Preview
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- PROJECT 05: NOVA -->
+                <article class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center group">
+                    <div class="lg:col-span-7 order-2 lg:order-1">
+                        <div class="relative rounded-sm overflow-hidden hairline-border bg-zce-card p-3 hover-lift group-hover:border-zce-border-hover">
+                            <div class="relative aspect-[16/10] overflow-hidden bg-zce-black">
+                                <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80" alt="NovaTech Project Screenshot" class="w-full h-full object-cover grayscale contrast-125 transition-all duration-700 group-hover:scale-105 group-hover:grayscale-0">
+                                <div class="absolute inset-0 bg-gradient-to-t from-zce-black via-transparent to-transparent opacity-80"></div>
+                                <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between">
+                                    <span class="px-2.5 py-1 text-[10px] font-mono uppercase bg-zce-black/80 text-zce-cream hairline-border backdrop-blur-sm">Corporate Tech Firm</span>
+                                    <button onclick="openPreview('https://zaccosmosengine.github.io/Project-5-NovaTech/', 'NOVA // Project 05')" class="px-3 py-1.5 rounded-sm bg-zce-accent text-white font-mono text-[11px] uppercase tracking-wider flex items-center gap-1.5 shadow-lg hover:bg-blue-700 transition-colors">
+                                        <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i> Quick Preview
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-5 order-1 lg:order-2 space-y-6">
+                        <div class="text-xs font-mono text-zce-accent font-bold tracking-widest uppercase">05 // 05</div>
+                        <h3 class="text-3xl sm:text-4xl font-serif text-zce-cream tracking-tight">NOVA</h3>
+                        <div class="text-xs font-mono text-zce-muted uppercase tracking-wider">Category: Corporate Tech Infrastructure</div>
+                        <p class="text-sm text-zce-muted leading-relaxed font-light">
+                            Structured, enterprise technology firm platform focused on modern grid precision, metric displays, and digital infrastructure showcase.
+                        </p>
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span class="px-2.5 py-1 text-[10px] font-mono uppercase hairline-border bg-zce-card text-zce-cream">Enterprise UI</span>
+                            <span class="px-2.5 py-1 text-[10px] font-mono uppercase hairline-border bg-zce-card text-zce-cream">Grid Precision</span>
+                            <span class="px-2.5 py-1 text-[10px] font-mono uppercase hairline-border bg-zce-card text-zce-cream">Infrastructure</span>
+                        </div>
+                        <div class="flex items-center space-x-6 pt-4 hairline-border-t">
+                            <a href="https://zaccosmosengine.github.io/Project-5-NovaTech/" target="_blank" class="text-zce-cream font-mono text-xs uppercase tracking-widest inline-flex items-center hover:text-zce-accent transition-colors">
+                                View Live Site <i data-lucide="arrow-up-right" class="w-4 h-4 ml-1"></i>
+                            </a>
+                            <button onclick="openPreview('https://zaccosmosengine.github.io/Project-5-NovaTech/', 'NOVA // Project 05')" class="text-xs font-mono text-zce-muted hover:text-zce-cream transition-colors">
+                                Embedded Preview
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- STUDIO & APPROACH SECTION -->
+        <section id="about" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 hairline-border-b">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-20">
+                <div class="lg:col-span-5">
+                    <span class="text-xs font-mono uppercase tracking-widest text-zce-accent">[ STUDIO PHILOSOPHY ]</span>
+                    <h2 class="text-3xl sm:text-5xl font-serif text-zce-cream mt-2 tracking-tight">ABOUT Z.C.E.</h2>
+                </div>
+                <div class="lg:col-span-7 space-y-6 text-zce-muted font-light leading-relaxed">
+                    <p class="text-base text-zce-cream">
+                        ZAC.COSMOS.ENGINE is an independent digital practice operating at the intersection of architectural structure, editorial typography, and high-performance web engineering.
+                    </p>
+                    <p class="text-sm">
+                        We reject standard agency templates, unnecessary 3D fluff, and generic SaaS dashboards. Instead, we treat each web deployment as a distinct visual frame tailored specifically to the personality and demands of the project—from cinematic dark mode platforms to warm hospitality portals.
+                    </p>
+                </div>
+            </div>
+
+            <div id="approach" class="pt-16 hairline-border-t">
+                <div class="text-xs font-mono uppercase tracking-widest text-zce-accent mb-12">[ METHODOLOGY ] — THE 3-COLUMN APPROACH</div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Column 01 -->
+                    <div class="p-8 hairline-border bg-zce-card space-y-4 hover-lift">
+                        <div class="font-mono text-xs text-zce-accent font-bold">01 // ARCHITECTURE</div>
+                        <h3 class="text-xl font-serif text-zce-cream">Direction & Grid System</h3>
+                        <p class="text-xs text-zce-muted leading-relaxed font-light">
+                            Every project begins with a strict grid layout, establishing whitespace proportions, high-contrast visual balance, and clean responsive breakpoints.
+                        </p>
+                    </div>
+
+                    <!-- Column 02 -->
+                    <div class="p-8 hairline-border bg-zce-card space-y-4 hover-lift">
+                        <div class="font-mono text-xs text-zce-accent font-bold">02 // CRAFT</div>
+                        <h3 class="text-xl font-serif text-zce-cream">Editorial Craft & Personality</h3>
+                        <p class="text-xs text-zce-muted leading-relaxed font-light">
+                            Typography selection dictates tone. We pair wide-tracked technical monospaced elements with elegant serifs and clean sans-serif body copy.
+                        </p>
+                    </div>
+
+                    <!-- Column 03 -->
+                    <div class="p-8 hairline-border bg-zce-card space-y-4 hover-lift">
+                        <div class="font-mono text-xs text-zce-accent font-bold">03 // PERFORMANCE</div>
+                        <h3 class="text-xl font-serif text-zce-cream">Clean Code & Zero Bloat</h3>
+                        <p class="text-xs text-zce-muted leading-relaxed font-light">
+                            Built with standard HTML5, CSS Grid/Flexbox, and zero heavy dependencies to guarantee immediate page load speeds and seamless mobile rendering.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28">
+            <div class="p-8 sm:p-16 hairline-border bg-zce-card relative overflow-hidden">
+                
+                <div class="max-w-3xl space-y-8">
+                    <span class="text-xs font-mono uppercase tracking-widest text-zce-accent">[ INITIATE COMMISSION ]</span>
+                    <h2 class="text-4xl sm:text-6xl font-serif text-zce-cream tracking-tight leading-tight">
+                        LET'S BUILD SOMETHING EXCEPTIONAL.
+                    </h2>
+                    <p class="text-sm sm:text-base text-zce-muted font-light leading-relaxed">
+                        Available for select web design commissions, brand platforms, and custom digital architecture projects.
+                    </p>
+
+                    <!-- Interactive Instagram Contact Widget -->
+                    <div class="pt-4 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                        <div class="px-5 py-3 hairline-border bg-zce-black font-mono text-sm text-zce-cream flex items-center space-x-3 w-full sm:w-auto">
+                            <i data-lucide="instagram" class="w-4 h-4 text-zce-accent shrink-0"></i>
+                            <span id="studio-instagram">@zac.cosmos.engine</span>
+                        </div>
+                        <a href="https://www.instagram.com/zac.cosmos.engine/#" target="_blank" class="px-6 py-3 bg-zce-accent text-white font-mono text-xs uppercase tracking-widest flex items-center space-x-2 hover:bg-blue-700 transition-colors w-full sm:w-auto justify-center">
+                            <i data-lucide="message-circle" class="w-4 h-4"></i>
+                            <span>DM on Instagram</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Social Profile Links Grid -->
+                <div class="mt-16 pt-8 hairline-border-t grid grid-cols-2 sm:grid-cols-3 gap-4 font-mono text-xs">
+                    <a href="https://www.instagram.com/zac.cosmos.engine/#" target="_blank" class="flex items-center space-x-2 text-zce-muted hover:text-zce-cream transition-colors py-2">
+                        <i data-lucide="instagram" class="w-4 h-4 text-zce-accent"></i>
+                        <span>Instagram ↗</span>
+                    </a>
+                    <a href="https://github.com/zaccosmosengine" target="_blank" class="flex items-center space-x-2 text-zce-muted hover:text-zce-cream transition-colors py-2">
+                        <i data-lucide="github" class="w-4 h-4 text-zce-accent"></i>
+                        <span>GitHub ↗</span>
+                    </a>
+                    <a href="https://linkedin.com/in/zaccosmosengine" target="_blank" class="flex items-center space-x-2 text-zce-muted hover:text-zce-cream transition-colors py-2">
+                        <i data-lucide="linkedin" class="w-4 h-4 text-zce-accent"></i>
+                        <span>LinkedIn ↗</span>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="hairline-border-t py-12 bg-zce-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between text-xs font-mono text-zce-muted gap-4">
+            <div>
+                © 2026 Z.C.E. / ZAC.COSMOS.ENGINE. All Rights Reserved.
+            </div>
+            <div class="flex items-center space-x-6">
+                <span>70% Editorial</span>
+                <span>20% Digital</span>
+                <span class="text-zce-accent font-bold">10% Motion</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE LIVE PREVIEW MODAL / DRAWER -->
+    <div id="preview-modal" class="fixed inset-0 z-50 hidden flex-col drawer-overlay">
+        <!-- Drawer Header Bar -->
+        <div class="bg-zce-card hairline-border-b px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center space-x-4">
+                <div class="flex items-center space-x-1.5">
+                    <span class="w-2.5 h-2.5 rounded-full bg-red-500/80"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-green-500/80"></span>
+                </div>
+                <span id="preview-title" class="font-mono text-xs text-zce-cream font-bold">Live Preview</span>
+            </div>
+
+            <!-- Device Viewport Toggle Controls -->
+            <div class="hidden sm:flex items-center space-x-1 bg-zce-black p-1 hairline-border rounded-sm font-mono text-[10px]">
+                <button onclick="setViewport('desktop')" id="btn-desktop" class="px-2.5 py-1 text-zce-cream bg-zce-card rounded-sm">Desktop</button>
+                <button onclick="setViewport('mobile')" id="btn-mobile" class="px-2.5 py-1 text-zce-muted hover:text-zce-cream">Mobile</button>
+            </div>
+
+            <div class="flex items-center space-x-3">
+                <a id="preview-external-link" href="#" target="_blank" class="px-3 py-1 bg-zce-black hairline-border text-xs font-mono text-zce-cream flex items-center gap-1 hover:border-zce-accent transition-colors">
+                    <span>Open Fullscreen</span>
+                    <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                </a>
+                <button onclick="closePreview()" class="p-1 text-zce-muted hover:text-red-400 transition-colors">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- iframe Container Frame -->
+        <div class="flex-grow relative bg-black flex items-center justify-center p-2 sm:p-4">
+            <div id="iframe-wrapper" class="w-full h-full transition-all duration-300">
+                <iframe id="preview-iframe" class="w-full h-full border-0 bg-white" src="about:blank"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Interactive Preview Drawer Controls
+        function openPreview(url, title) {
+            const modal = document.getElementById('preview-modal');
+            const iframe = document.getElementById('preview-iframe');
+            const titleEl = document.getElementById('preview-title');
+            const extLink = document.getElementById('preview-external-link');
+
+            titleEl.textContent = title;
+            iframe.src = url;
+            extLink.href = url;
+
+            setViewport('desktop');
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closePreview() {
+            const modal = document.getElementById('preview-modal');
+            const iframe = document.getElementById('preview-iframe');
+
+            iframe.src = 'about:blank';
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = '';
+        }
+
+        // Viewport Device Frame Switcher
+        function setViewport(device) {
+            const wrapper = document.getElementById('iframe-wrapper');
+            const btnDesktop = document.getElementById('btn-desktop');
+            const btnMobile = document.getElementById('btn-mobile');
+
+            if (device === 'mobile') {
+                wrapper.className = "w-[375px] h-[667px] hairline-border shadow-2xl transition-all duration-300";
+                btnMobile.className = "px-2.5 py-1 text-zce-cream bg-zce-card rounded-sm";
+                btnDesktop.className = "px-2.5 py-1 text-zce-muted hover:text-zce-cream";
+            } else {
+                wrapper.className = "w-full h-full transition-all duration-300";
+                btnDesktop.className = "px-2.5 py-1 text-zce-cream bg-zce-card rounded-sm";
+                btnMobile.className = "px-2.5 py-1 text-zce-muted hover:text-zce-cream";
+            }
+        }
+    </script>
+</body>
+</html>
